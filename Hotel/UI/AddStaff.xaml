@@ -1,0 +1,64 @@
+﻿<Window x:Class="Hotel.UI.AddStaff"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.UI"
+        mc:Ignorable="d"
+        Title="AddStaff" Height="450" Width="800">
+    <Grid Margin="15 5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Label Content="Add Staff" FontSize="24" />
+                <DataGrid Name="StaffView" MinHeight="350" Loaded="StaffView_Loaded">
+
+                </DataGrid>
+            </StackPanel>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Label Content="Full Name" Grid.Column="0" Grid.Row="0"></Label>
+                <TextBox Name="TxtFullName" Grid.Column="1" Grid.Row="0"></TextBox>
+                <Label Content="Gender" Grid.Column="0" Grid.Row="1"></Label>
+                <TextBox Name="TxtGender" Grid.Column="1" Grid.Row="1"></TextBox>
+                <Label Content="Position" Grid.Column="0" Grid.Row="2"></Label>
+                <ComboBox Name="TxtPosition" Grid.Column="1" Grid.Row="2">
+                    <ComboBoxItem Content="Single"></ComboBoxItem>
+                    <ComboBoxItem Content="Double"></ComboBoxItem>
+                    <ComboBoxItem Content="Triple"></ComboBoxItem>
+                    <ComboBoxItem Content="Premium"></ComboBoxItem>
+                    <ComboBoxItem Content="Deluxe"></ComboBoxItem>
+                    <ComboBoxItem Content="Royal"></ComboBoxItem>
+                </ComboBox>
+                <Label Content="Email" Grid.Column="0" Grid.Row="3"></Label>
+                <TextBox Name="TxtEmail" Grid.Column="1" Grid.Row="3"></TextBox>
+                <Label Content="Phone Num" Grid.Column="0" Grid.Row="4"></Label>
+                <TextBox Name="TxtPhoneNum" Grid.Column="1" Grid.Row="4"></TextBox>
+                <Label Content="Home Address" Grid.Column="0" Grid.Row="5"></Label>
+                <TextBox Name="TxtHomeAddress" Grid.Column="1" Grid.Row="5"></TextBox>
+                <Label Content="LoginID" Grid.Column="0" Grid.Row="6"></Label>
+                <TextBox Name="TxtLoginID" Grid.Column="1" Grid.Row="6"></TextBox>
+                <Label Content="Password" Grid.Column="0" Grid.Row="7"></Label>
+                <TextBox Name="TxtPassword" Grid.Column="1" Grid.Row="7"></TextBox>
+                <Button Name="BtnAddStaff" Grid.Column="0" Grid.Row="8" Content="Add Room" Background="Aqua" Foreground="White" Click="BtnAddStaff_Click" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
