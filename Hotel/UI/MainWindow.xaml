@@ -1,0 +1,244 @@
+﻿<Window x:Class="Hotel.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.UI"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="MainWindow" Height="640" Width="1080">
+
+
+    <!--<Window.DataContext>
+        <ViewModels:RoomsViewModel/>
+    </Window.DataContext>-->
+
+    <Window.Resources>
+
+        <!--các model ở đây là ViewModel của các form (lớp đại diện cho form)-->
+        
+        <!--<DataTemplate x:Name="RoomsModel" 
+                      DataType="{x:Type ViewModels:RoomsModel}">
+            <views:MainView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="ServicesModel" 
+                      DataType="{x:Type ViewModels:ServicesModel}">
+            <views:AddEmployee DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="CheckOutModel" 
+                      DataType="{x:Type ViewModels:CheckOutModel}">
+            <views:ViewEmployees DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="ReportModel" 
+                      DataType="{x:Type ViewModels:ReportModel}">
+            <views:CheckEmployees DataContext="{Binding}"/>
+        </DataTemplate>-->
+
+        <Style TargetType="ListBoxItem" x:Key="FeatureTab">
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="true">
+                    <Setter Property="Background" Value="#F7F3E3"/>
+                    <Setter Property="Foreground" Value="#00FFFFFF"/>
+                </Trigger>
+            </Style.Triggers>
+
+            <Setter Property="Background" Value="#EFE6BF"></Setter>
+            <Setter Property="Cursor" Value="Hand"></Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Background="{TemplateBinding Background}"
+                            Height="40"
+                            MinWidth="50"
+                            Margin="8,2,0,2"
+                            CornerRadius="4,0,0,4">
+                            <Label Content="{Binding}"
+                               Foreground="#033F63"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center">
+                            </Label>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" 
+                Grid.ColumnSpan="2"
+                Background="#F9F9F9F9"
+                MouseDown="Border_MouseDown">
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="Hotel Manager" 
+                       FontWeight="Medium"
+                       Foreground="#033F63"
+                       FontFamily="Gidugu"
+                       VerticalAlignment="Center"
+                       Margin="16 0 0 0">
+                </Label>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0 0 16 0">
+                    <Label Content="{Binding}"
+                           Foreground="#033F63"
+                           VerticalAlignment="Center"
+                           FontSize="16"/>
+                    <Ellipse Width="24"
+                             Height="24"
+                             StrokeThickness="1"
+                             Stroke="#033F63">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Menu VerticalAlignment="Center"
+                          Margin="0 0 48 0"
+                          BorderThickness="0"
+                          Foreground="#033F63"
+                          Background="Transparent" FontFamily="Gidugu" Focusable="False" HorizontalContentAlignment="Right">
+                        <MenuItem Header="_&#65088;" HorizontalAlignment="Left" Focusable="False" IsTabStop="False">
+                            <Grid Width="180">
+                                <Border CornerRadius="8"/>
+                                <StackPanel Margin="4">
+                                    <StackPanel.Resources>
+                                        <Style TargetType="TextBlock" x:Key="profile_body">
+                                            <Setter Property="FontSize" Value="12"></Setter>
+                                            <Setter Property="Padding" Value="16 0 0 0"></Setter>
+                                            <Setter Property="Margin" Value="0 2"/>
+                                        </Style>
+                                    </StackPanel.Resources>
+
+                                    <DockPanel Margin="8">
+                                        <Ellipse Width="32" Height="32" StrokeThickness="1" Stroke="#033F63">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="{Binding}"
+                                                            Stretch="UniformToFill"
+                                                            AlignmentX="Center"
+                                                            AlignmentY="Center"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <TextBlock Text="{Binding FullName}"
+                                                   FontSize="14"
+                                                   VerticalAlignment="Center"
+                                                   Margin="8 0 0 0"
+                                                   Foreground="#033F63"/>
+                                    </DockPanel>
+
+                                    <DockPanel>
+                                        <TextBlock Text="ID: " Style="{StaticResource profile_body}"/>
+                                        <TextBlock Text="{Binding StaffID}" 
+                                                   Foreground="#033F63" Padding="0"
+                                                   Style="{StaticResource profile_body}"/>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <TextBlock Text="Gender: " Style="{StaticResource profile_body}"/>
+                                        <TextBlock Text="{Binding Gender}" 
+                                                   Foreground="#033F63" Padding="0"
+                                                   Style="{StaticResource profile_body}"/>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <TextBlock Text="Position: " Style="{StaticResource profile_body}"/>
+                                        <TextBlock Text="{Binding Position}" 
+                                                   Foreground="#033F63" Padding="0"
+                                                   Style="{StaticResource profile_body}"/>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <TextBlock Text="Email: " Style="{StaticResource profile_body}"/>
+                                        <TextBlock Text="{Binding Email}" 
+                                                   Foreground="#033F63" Padding="0"
+                                                   Style="{StaticResource profile_body}"/>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <TextBlock Text="Phone: " Style="{StaticResource profile_body}"/>
+                                        <TextBlock Text="{Binding PhoneNum}" 
+                                                   Foreground="#033F63"  Padding="0"
+                                                   Style="{StaticResource profile_body}"/>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <TextBlock Text="Address: " Style="{StaticResource profile_body}"/>
+                                        <TextBlock Text="{Binding HomeAdress}" 
+                                                   Foreground="#033F63" Padding="0"
+                                                   Style="{StaticResource profile_body}"/>
+                                    </DockPanel>
+
+                                    <Button Content="Log out"
+                                            Margin="16"
+                                            Height="22"
+                                            FontSize="12"
+                                            Width="120"
+                                            Foreground="#fff"
+                                            Background="#EF476F"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            HorizontalAlignment="Center">
+                                        <Button.Resources>
+                                            <Style TargetType="Border">
+                                                <Setter Property="CornerRadius" Value="4"/>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </MenuItem>
+                    </Menu>
+                    <Button Width="32" Height="32"
+                            Content="🗕" FontSize="16"
+                            Background="Transparent"
+                            Foreground="Gray"
+                            FontWeight="DemiBold"
+                            BorderThickness="0"
+                            Click="ButtonMinimize_Click"
+                            Cursor="Hand">
+                    </Button>
+                    <Button Width="20" Height="22"
+                            FontSize="16" Content="╳"
+                            Background="Transparent"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            BorderThickness="0"
+                            Click="ButtonCLose_Click"
+                            Cursor="Hand"
+                            VerticalAlignment="Center" Margin="0,8,0,10">
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <StackPanel Grid.Row="1">
+            <Label x:Name="lTime" FontSize="32"
+                   HorizontalAlignment="Center"
+                   Foreground="#033F63"/>
+            <TextBlock x:Name="tbxDate" FontSize="12"
+                       HorizontalAlignment="Center"
+                       Foreground="#033F63"/>
+
+            <ListBox x:Name="lvTab" 
+                      Margin="0, 8, 0, 0"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                      SelectionMode="Single"
+                     ItemContainerStyle="{StaticResource FeatureTab}">
+            </ListBox>
+        </StackPanel>
+
+        <Border Grid.Column="1"
+                Grid.Row="1"
+                Background="#F7F3E3"
+                CornerRadius="8 0 0 8"
+                BorderThickness="0">
+            <ContentControl Content="{Binding}"/>
+        </Border>
+    </Grid>
+</Window>
