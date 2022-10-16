@@ -32,21 +32,23 @@
             </DockPanel>
             <DockPanel Margin="0 24"
                        HorizontalAlignment="Center">
-                <Button Content="Cancel" 
+                <Button x:Name="btnCancel"
+                        Content="Cancel" 
                         Background="#aaa"
                         Margin="0 0 32 0"
                         Foreground="#fff"
-                        Click="Button_Click_1">
+                        Click="btnCancel_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="4"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Foreground="#fff"
+                <Button x:Name="btnDelete"
+                        Foreground="#fff"
                         Content="Delete Room"
                         Background="#EF476F"
-                        Click="Button_Click">
+                        Click="btnDelete_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="4"/>
