@@ -10,7 +10,7 @@ namespace HotelManagerLibrary.DataAccess
     public interface IDataConnection
     {
         RoomModel CreateRoom(RoomModel model);
-        void DeleteRoom(string RoomNum);
+        bool DeleteRoom(string RoomNum);
         List<RoomModel> GetAllRooms();
         StaffModel CreateStaff(StaffModel model);
         List<StaffModel> GetAllStaffs();

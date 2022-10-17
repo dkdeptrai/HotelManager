@@ -813,11 +813,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\HotelManager\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
+      "projectUniqueName": "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
       "projectName": "HotelManagerLibrary",
-      "projectPath": "D:\\Programming\\HotelManager\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
+      "projectPath": "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
       "packagesPath": "C:\\Users\\khoa\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\HotelManager\\HotelManager\\HotelManagerLibrary\\obj\\",
+      "outputPath": "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",

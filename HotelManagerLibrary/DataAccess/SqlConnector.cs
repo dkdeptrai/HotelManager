@@ -30,7 +30,14 @@ namespace HotelManagerLibrary.DataAccess
                 p.Add("@Price", model.Price);
                 try
                 {
-                    connection.Execute("dbo.spRooms_Insert", p, commandType: CommandType.StoredProcedure);
+                    if(!CheckExistence("Rooms", "RoomNum", model.RoomNum))
+                    {
+                        connection.Execute("dbo.spRooms_Insert", p, commandType: CommandType.StoredProcedure);
+                    }
+                    else
+                    {
+                        return null;
+                    }    
 
                 }
                 catch (Exception ex)
@@ -41,13 +48,21 @@ namespace HotelManagerLibrary.DataAccess
             return model;
         }
 
-        public void DeleteRoom(string RoomNum)
+        public bool DeleteRoom(string RoomNum)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
             {
                 var p = new DynamicParameters();
                 p.Add("@RoomNum", RoomNum);
-                connection.Execute("dbo.spRooms_Delete", p, commandType: CommandType.StoredProcedure);
+                if(CheckExistence("Rooms", "RoomNum", RoomNum))
+                {
+                    connection.Execute("dbo.spRooms_Delete", p, commandType: CommandType.StoredProcedure);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
 
         }
@@ -64,16 +79,23 @@ namespace HotelManagerLibrary.DataAccess
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
             {
-                var p = new DynamicParameters();
-                p.Add("@FullName", model.FullName);
-                p.Add("@Gender", model.Gender);
-                p.Add("@Position", model.Position);
-                p.Add("@Email", model.Email);
-                p.Add("@PhoneNum", model.PhoneNum);
-                p.Add("@HomeAddress", model.HomeAdress);
-                p.Add("@LoginID", model.LoginID);
-                p.Add("@Password", model.Password);
-                connection.Execute("dbo.spStaffs_Insert", p, commandType: CommandType.StoredProcedure);
+                if(!CheckExistence("Staffs", "LoginID", model.LoginID))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@FullName", model.FullName);
+                    p.Add("@Gender", model.Gender);
+                    p.Add("@Position", model.Position);
+                    p.Add("@Email", model.Email);
+                    p.Add("@PhoneNum", model.PhoneNum);
+                    p.Add("@HomeAddress", model.HomeAdress);
+                    p.Add("@LoginID", model.LoginID);
+                    p.Add("@Password", model.Password);
+                    connection.Execute("dbo.spStaffs_Insert", p, commandType: CommandType.StoredProcedure);
+                }
+                else
+                {
+                    return null;
+                }
             }
             return model;
         }
@@ -84,6 +106,23 @@ namespace HotelManagerLibrary.DataAccess
             {
                 List<StaffModel> staffs = new List<StaffModel>();
                 return connection.Query<StaffModel>("SELECT * FROM Staffs").ToList();
+            }
+        }
+
+        /// <summary>
+        /// Checking the existence of records in the Database
+        /// 
+        /// </summary>
+        /// <param name="TableName"></param>
+        /// <param name="Column"></param>
+        /// <param name="Value"></param>
+        /// <returns>bool value for records existence</returns>
+        public bool CheckExistence(string TableName, string Column, string Value)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
+            {
+                bool exists = connection.ExecuteScalar<int>( $"SELECT COUNT(1) FROM {TableName} WHERE ({Column} = '{Value}')", new { value = Value }) > 0;
+                return exists;
             }
         }
     }
