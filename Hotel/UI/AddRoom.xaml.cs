@@ -45,17 +45,22 @@ namespace Hotel.UI
                 IDataConnection db = GlobalConfig.Connection;
                 try
                 {
-                    db.CreateRoom(model);
+                    if(db.CreateRoom(model) != null)
+                    {
+                        MessageBox.Show("Room Added Successfuly!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ClearFields();
+                        RoomsView_Loaded(this, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Room Num existed!, Please try again!", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    BtnAddRoom_Click(this, null);
                     throw;
                 }
-                MessageBox.Show("Room Added Successfuly!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                ClearFields();
-                RoomsView_Loaded(this, null);
+                
 
             }
             else

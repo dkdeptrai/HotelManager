@@ -33,7 +33,14 @@ namespace Hotel.UI
                 IDataConnection db = GlobalConfig.Connection;
                 try
                 {
-                    db.DeleteRoom(TxtRoomNum.Text);
+                    if(db.DeleteRoom(TxtRoomNum.Text))
+                    {
+                        MessageBox.Show("Room deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Room not found, try again!", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 catch (Exception)
                 {

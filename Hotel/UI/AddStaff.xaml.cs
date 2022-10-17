@@ -44,15 +44,23 @@ namespace Hotel.UI
                 IDataConnection db = GlobalConfig.Connection;
                 try
                 {
-                    db.CreateStaff(model);
+                    if(db.CreateStaff(model)!= null)
+                    {
+                        MessageBox.Show("Staff Added Successfuly!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ClearFields();
+                        StaffView_Loaded(this, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Staff Login ID existed! Try again!", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                    }
                 }
                 catch (Exception ex)
                 {
                     throw;
                 }
-                MessageBox.Show("Staff Added Successfuly!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                ClearFields();
-                StaffView_Loaded(this, null);
+                
             }
             else
             {
