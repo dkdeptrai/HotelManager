@@ -26,7 +26,7 @@ namespace Hotel.UI
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             if (InputValidation())
             {
@@ -51,6 +51,11 @@ namespace Hotel.UI
                 output = false;
             }
             return output;
+        }
+        
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
