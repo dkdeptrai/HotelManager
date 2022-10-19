@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
@@ -124,6 +125,44 @@ namespace HotelManagerLibrary.DataAccess
                 bool exists = connection.ExecuteScalar<int>( $"SELECT COUNT(1) FROM {TableName} WHERE ({Column} = '{Value}')", new { value = Value }) > 0;
                 return exists;
             }
+        }
+
+        public StaffModel StaffLogin(string LoginID, string Password)
+        {
+            StaffModel model = null;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
+            {
+                if (CheckExistence("Staffs", "LoginID", LoginID))
+                {
+                    model = new StaffModel();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Staffs WHERE LoginID = @loginID", (SqlConnection)connection);
+                    cmd.Parameters.AddWithValue("@loginID", LoginID);
+                    connection.Open();
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                    while(sqlDataReader.Read())
+                    {
+                        if (sqlDataReader["LoginID"].ToString() == LoginID && Password == sqlDataReader["Password"].ToString())
+                        {
+                            model.StaffID=(int)sqlDataReader["StaffID"];
+                            model.FullName=sqlDataReader["FullName"].ToString();
+                            model.Gender=sqlDataReader["Gender"].ToString();
+                            model.Position=sqlDataReader["Position"].ToString();
+                            model.Email=sqlDataReader["Email"].ToString();
+                            model.PhoneNum=sqlDataReader["PhoneNum"].ToString();
+                            model.HomeAdress=sqlDataReader["HomeAddress"].ToString();
+                            model.LoginID=sqlDataReader["LoginID"].ToString();
+                            model.Password=sqlDataReader["Password"].ToString();
+                        }
+                        else
+                        {
+                            connection.Close();
+                            return null;
+                        }
+                    }
+                }
+            connection.Close();
+            }
+            return model;
         }
     }
 }
