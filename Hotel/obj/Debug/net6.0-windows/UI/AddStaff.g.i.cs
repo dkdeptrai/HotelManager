@@ -133,7 +133,7 @@ namespace Hotel.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Hotel;V1.0.0.0;component/ui/addstaff.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Hotel;component/ui/addstaff.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UI\AddStaff.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

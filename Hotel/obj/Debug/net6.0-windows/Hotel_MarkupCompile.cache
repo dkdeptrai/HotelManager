@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\
+D:\University\LTTQ\project\HotelManager\Hotel\obj\Debug\net6.0-windows\
 Hotel
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Programming\HotelManager\HotelManager\Hotel\App.xaml
-3-1373515660
+D:\University\LTTQ\project\HotelManager\Hotel\App.xaml
+5-154170406
 
-51616022306
-199-1201460625
-UI\AddRoom.xaml;UI\AddStaff.xaml;UI\DeleteRoom.xaml;
+7-1113049607
+1991064200234
+UI\AddRoom.xaml;UI\AddStaff.xaml;UI\DeleteRoom.xaml;UI\Login.xaml;UI\MainWindow.xaml;
 
 False
 

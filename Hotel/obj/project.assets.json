@@ -835,11 +835,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\HotelManager\\HotelManager\\Hotel\\Hotel.csproj",
+      "projectUniqueName": "D:\\University\\LTTQ\\project\\HotelManager\\Hotel\\Hotel.csproj",
       "projectName": "Hotel",
-      "projectPath": "D:\\Programming\\HotelManager\\HotelManager\\Hotel\\Hotel.csproj",
+      "projectPath": "D:\\University\\LTTQ\\project\\HotelManager\\Hotel\\Hotel.csproj",
       "packagesPath": "C:\\Users\\khoa\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\HotelManager\\HotelManager\\Hotel\\obj\\",
+      "outputPath": "D:\\University\\LTTQ\\project\\HotelManager\\Hotel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -856,8 +856,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\Programming\\HotelManager\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj": {
-              "projectPath": "D:\\Programming\\HotelManager\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj"
+            "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj": {
+              "projectPath": "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj"
             }
           }
         }

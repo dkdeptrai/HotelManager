@@ -1,4 +1,5 @@
 ﻿using Hotel.UI;
+using HotelManagerLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,10 +15,11 @@ namespace Hotel
     /// </summary>
     public partial class App : Application
     {
+        public static StaffModel CurrentUser;
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             HotelManagerLibrary.GlobalConfig.InitializeConnection();
-            AddStaff window = new AddStaff();
+            Login window = new Login();
             window.Show();
         }
     }

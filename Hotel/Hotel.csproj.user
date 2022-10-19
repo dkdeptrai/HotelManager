@@ -16,7 +16,7 @@
     <Compile Update="UI\DeleteRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UI\Views\UserProfile.xaml.cs">
+    <Compile Update="UI\Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,7 +30,7 @@
     <Page Update="UI\DeleteRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\Views\UserProfile.xaml">
+    <Page Update="UI\Login.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
