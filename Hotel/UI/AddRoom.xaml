@@ -1,49 +1,211 @@
-﻿<Window x:Class="Hotel.UI.AddRoom"
+﻿<Window x:Class="AddRoom.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hotel.UI"
+        xmlns:local="clr-namespace:AddRoom"
         mc:Ignorable="d"
-        Title="AddRoom" Height="450" Width="800">
-    <Grid Margin="15 5">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <Label Content="Add Room" FontSize="24" />
-                <DataGrid Name="RoomsView" MinHeight="350" Loaded="RoomsView_Loaded">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" Background="Transparent"
+        Title="MainWindow" Height="450" Width="800">
 
-                </DataGrid>
-            </StackPanel>
-            <Grid Grid.Column="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+    <Border Background="White" CornerRadius="7" >
+        <Border BorderBrush="White" BorderThickness="0" CornerRadius="10">
+            <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="170"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <Label Content="Room Num" Grid.Column="0" Grid.Row="0"></Label>
-                <TextBox Name="TxtRoomNum" Grid.Column="1" Grid.Row="0"></TextBox>
-                <Label Content="Room Type" Grid.Column="0" Grid.Row="1"></Label>
-                <ComboBox Name="TxtRoomType" Grid.Column="1" Grid.Row="1">
-                    <ComboBoxItem Content="Single"></ComboBoxItem>
-                    <ComboBoxItem Content="Double"></ComboBoxItem>
-                    <ComboBoxItem Content="Triple"></ComboBoxItem>
-                    <ComboBoxItem Content="Premium"></ComboBoxItem>
-                    <ComboBoxItem Content="Deluxe"></ComboBoxItem>
-                    <ComboBoxItem Content="Royal"></ComboBoxItem>
-                </ComboBox>
-                <Label Content="Room Price" Grid.Column="0" Grid.Row="2"></Label>
-                <TextBox Name="RoomPrice" Grid.Column="1" Grid.Row="2"></TextBox>
-                <Button Name="BtnAddRoom" Grid.Column="0" Grid.Row="3" Content="Add Room" Background="Aqua" Foreground="White" Click="BtnAddRoom_Click" />
+                <Grid Grid.Row="0" >
+                    <materialDesign:ColorZone
+                        Mode="PrimaryDark"
+                        Padding="10"
+                        CornerRadius="7,7,0,0"
+                        ClipToBounds="False" Grid.ColumnSpan="5" Height="50" Background="#119DA4">
+                        <Grid Height="50" Margin="0,-10,0,-10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <TextBlock>
+                             <TextBlock  
+                            Text="Add Room"
+                            Foreground="White"
+                           
+                            FontSize="20"
+                            Margin="50,10,10,10"
+                            FontFamily="Arial" Height="26" Width="105"
+                            />
+                        </TextBlock>
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <Button
+                            Style="{StaticResource MaterialDesignToolButton}"
+                            Grid.Column="2" Grid.RowSpan="2">
+                                    <materialDesign:PackIcon Kind="WindowMinimize" Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Column="3">
+                                <Button
+                            Style="{StaticResource MaterialDesignToolButton}"
+                            Grid.Column="2" Grid.RowSpan="2">
+                                    <materialDesign:PackIcon Kind="WindowMaximize" HorizontalAlignment="Center" Height="20" Width="20" VerticalAlignment="Center" FontWeight="Light" Foreground="LightGray" />
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Column="4">
+                                <Button
+                            Style="{StaticResource MaterialDesignToolButton}"
+                            Grid.Column="2" Grid.RowSpan="2">
+                                    <materialDesign:PackIcon Kind="WindowClose" Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="50" ></ColumnDefinition>
+                        <ColumnDefinition Width="250"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <TextBlock  
+                            Text="ID: "
+                            Foreground="Black"
+                            FontSize="20"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" FontFamily="Arial"
+                            />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <TextBox
+                            x:Name="NameTextBox"
+                            FontSize="20"
+                            VerticalAlignment="Center">
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <TextBlock  
+                            Text="Floor: "
+                            Foreground="Black"
+                            FontSize="20"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" FontFamily="Arial" Width="52"
+                            />
+                    </Grid>
+                    <Grid Grid.Column="4">
+                        <TextBox
+                            x:Name="NameTextBox1"
+                            FontSize="20"
+                            VerticalAlignment="Center">
+                        </TextBox>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="100" ></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <TextBlock  
+                            Text="Type ID: "
+                            Foreground="Black"
+                            
+                            FontSize="20"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" FontFamily="Arial"
+                            />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <TextBox
+                            x:Name="NameTextBox2"
+                            FontSize="20"
+                            VerticalAlignment="Center">
+                        </TextBox>
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="600"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <StackPanel>
+                            <TextBox
+                            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                            Height="166"
+                            materialDesign:HintAssist.Hint="Note:"
+                               FontSize="20"
+                               VerticalContentAlignment="Top"
+                            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="170" ></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="170"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <Button
+                                Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
+                                ToolTip="MaterialDesignFlatAccentBackgroundButton"
+                                Width="140"
+                                Height="50"
+                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                Content="Cancel" 
+                                FontSize="20" 
+                                HorizontalAlignment="Center"
+                                RenderTransformOrigin="0.484,-0.848"  
+                                FontFamily="Arial"
+                                Background="#ef476f"
+                                Foreground="#FFE3E8E9" BorderThickness="0"
+                                materialDesign:ButtonAssist.CornerRadius="4"/>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Button
+                                Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
+                                ToolTip="MaterialDesignFlatAccentBackgroundButton"
+                                Width="140"
+                                Height="50"
+                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                Content="Confirm" 
+                                FontSize="20" 
+                                HorizontalAlignment="Center"
+                                RenderTransformOrigin="0.484,-0.848"  
+                                FontFamily="Arial"
+                               Background="#119DA4"
+                                Foreground="#FFE3E8E9" BorderThickness="0"
+                                materialDesign:ButtonAssist.CornerRadius="4"/>
+                    </Grid>
+                </Grid>
+
             </Grid>
-        </Grid>
-    </Grid>
+        </Border>
+    </Border>
 </Window>
