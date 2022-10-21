@@ -808,19 +808,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\khoa\\.nuget\\packages\\": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
+      "projectUniqueName": "D:\\Visual Studio\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
       "projectName": "HotelManagerLibrary",
-      "projectPath": "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
-      "packagesPath": "C:\\Users\\khoa\\.nuget\\packages\\",
-      "outputPath": "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\obj\\",
+      "projectPath": "D:\\Visual Studio\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "D:\\Visual Studio\\HotelManager\\HotelManagerLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -879,7 +879,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

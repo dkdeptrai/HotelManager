@@ -25,6 +25,25 @@
           }
         }
       },
+      "MaterialDesignColors/2.1.0-ci336": {
+        "runtime": {
+          "lib/net6.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/4.7.0-ci336": {
+        "dependencies": {
+          "MaterialDesignColors": "2.1.0-ci336"
+        },
+        "runtime": {
+          "lib/net6.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "4.7.0.0",
+            "fileVersion": "4.7.0.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
@@ -215,6 +234,20 @@
       "sha512": "sha512-sUfDVIf8LlHNiz3MfUFodeyRiemfN1JFkPxYjCxFWlwNPg1iQ49mB+0E89TkywWs4X8fiRWOVDQgtH5FtzK5Kw==",
       "path": "dapper.contrib/2.0.78",
       "hashPath": "dapper.contrib.2.0.78.nupkg.sha512"
+    },
+    "MaterialDesignColors/2.1.0-ci336": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ejFIXiFKF6o6637g4AINa5ebKs5qNfYiztrfe68B478n//2iFIPByhpnVtJSJIbXbyKwoNqd4aomxZ9IwFw6YQ==",
+      "path": "materialdesigncolors/2.1.0-ci336",
+      "hashPath": "materialdesigncolors.2.1.0-ci336.nupkg.sha512"
+    },
+    "MaterialDesignThemes/4.7.0-ci336": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XuuNHSeu8xjIfl6P2m7xLT1R0YSafzpyESPqYHbRLxU+YV/1WMcStYClu7EF8fAcrqI7ITnhKaXCuC+/dY4A8w==",
+      "path": "materialdesignthemes/4.7.0-ci336",
+      "hashPath": "materialdesignthemes.4.7.0-ci336.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
