@@ -1,0 +1,189 @@
+﻿<Window x:Class="Placing_order.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Placing_order"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontFamily="Eras Light ITC"
+        Title="MainWindow" 
+        Height="460" Width="480" Background="Transparent"
+        WindowStyle="None" Loaded="Window_Loaded">
+    <Border Background="White" CornerRadius="20" >
+        <Border BorderBrush="Transparent" BorderThickness="0" CornerRadius="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="230"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+
+                <materialDesign:ColorZone
+        Mode="PrimaryDark"
+        Padding="10"
+        CornerRadius="20,20,0,0"
+        Background="#119DA4"
+        ClipToBounds="False" Grid.ColumnSpan="7" Height="30"/>
+                <Grid Grid.Column="1" Grid.ColumnSpan="2" >
+                    <TextBlock Padding="7" Text="Placing order" HorizontalAlignment="Left" Foreground="White" />
+                </Grid>
+                <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource MaterialDesignToolButton}"
+                        Height="30"
+                        Grid.Column="4" Width="30" Click="Button_Click_2">
+                    <materialDesign:PackIcon Kind="WindowMinimize"
+                                                 Height="15" Width="30" Foreground="White"
+                                                 HorizontalAlignment="Center"
+                                             VerticalAlignment="Bottom"/>
+                </Button>
+
+                <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource MaterialDesignToolButton}"
+                        Height="30"
+                        Grid.Column="5" Width="30" Click="Button_Click_3">
+                    <materialDesign:PackIcon Kind="WindowMaximize"
+                                                 Height="15" Width="30" Foreground="White"
+                                                 HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"/>
+                </Button>
+                <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource MaterialDesignToolButton}"
+                        Height="30"
+                        Grid.Column="6" Width="30" Click="Button_Click">
+                    
+                    <materialDesign:PackIcon Kind="WindowClose"
+                                                 Height="15" Width="30" Foreground="White"
+                                                 HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             />
+                </Button>
+                <Label Grid.Column="2" Content="Placing:&#xA;" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Height="35" Width="70" Margin="0,60,0,0" 
+                       FontSize="16"/>
+                <Label Grid.Column="3" Content="Price:&#xA;&#xA;" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Height="35" Width="50" Margin="0,60,0,0"  
+                       FontWeight="Normal" 
+                       FontSize="16"/>
+                <Label Grid.Column="2" Content="To room:&#xA;" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="30"  Width="60" Margin="0,100,0,0" />
+                <Label Grid.Column="3" Content="Quantity:&#xA;" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Height="30" Width="60" Margin="-30,100,0,0"/>
+                <Label Grid.Column="2" Content="At:&#xA;"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Height="30"  Width="50" Margin="0,140,0,0"/>
+                <Label Grid.Column="3" Content="Voucher:&#xA;"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="30" Width="60" Margin="-30,300,0,0"   />
+                <Label Grid.Column="2" Content="Order ID:"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Height="30" Width="80" Margin="0,350,0,0" 
+                       FontSize="16"/>
+                <Label Grid.Column="3" Content="Total:&#xA;&#xA;"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="30"  Width="50" Margin="0,350,0,0" 
+                       FontSize="16"/>
+
+                <Label Grid.Column="2" Content="h&#xA;&#xA;" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Height="30" Margin="100,140,0,0" Width="20" 
+                       Foreground="#FFAFAEAE" Background="White" />
+                <Label Grid.Column="3" Content="/" HorizontalAlignment="Left"
+                       Height="30" Margin="85,135,0,0" VerticalAlignment="Top" 
+                       Width="15"/>
+                <Label Grid.Column="3" Content="/" HorizontalAlignment="Left"
+                       Height="30" Margin="20,135,0,0" VerticalAlignment="Top" 
+                       Width="16"/>
+
+                <Label Grid.Column="2" x:Name="placing" Content="English breakfast" 
+                       Foreground="#119DA4" HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="35" Margin="60,60,0,0"  Width="180" 
+                       FontSize="16"/>
+                <Label Grid.Column="3" x:Name="price" Content="40000" 
+                       Foreground="#119DA4" HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="35" Width="100" Margin="50,60,0,0" 
+                       FontSize="16"/>
+                <Label Grid.Column="3" x:Name="total" 
+                       Foreground="#119DA4" HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="35" Width="100" Margin="50,350,0,0" 
+                       FontSize="16"/>
+                <Label Grid.Column="2" x:Name="orderID" Content="101BF"
+                       Foreground="#119DA4" HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="35" Width="100" Margin="70,350,0,0"   FontSize="16" FontStyle="Normal"/>
+
+
+                <Button Grid.Column="2" 
+                    Background="#EF476F" Foreground="White" Content="Cancel" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Height="35" Margin="40,390,0,0"  Width="100" Click="Button_Click" />
+                <Button Grid.Column="3" Grid.ColumnSpan="2"
+                    Background="#119DA4" Foreground="White" Content="Confirm" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Height="35" Margin="10,390,0,0" Width="100" Click="Button_Click_1" />
+                <TextBox x:Name="note"
+                    Grid.Column="2" Grid.ColumnSpan="10" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Height="100" Width="380" Margin="0,180,0,0"
+                        materialDesign:HintAssist.Hint="Note:"
+                        TextWrapping="Wrap" BorderThickness="1" BorderBrush="#FFADA7A7"/>
+                <Rectangle Grid.Column="2" Grid.ColumnSpan="6" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top"
+                           Height="1"  Width="380" Margin="0,340,0,0" 
+                           Stroke="#FFADA7A7"/>
+
+                <TextBox Grid.Column="2" x:Name="room" 
+                         HorizontalAlignment="Left" VerticalAlignment="Top"
+                         Height="25" Width="90" Margin="70,95,0,0" 
+                         Text="" TextWrapping="Wrap"
+                         BorderThickness="1" BorderBrush="#FFADA7A7"/>
+                <TextBox Grid.Column="3" x:Name="quantity"
+                         HorizontalAlignment="Left" VerticalAlignment="Top"
+                         Height="25" Width="65" Margin="30,95,0,0" 
+                         TextWrapping="Wrap" Text=""
+                         BorderThickness="1" BorderBrush="#FFADA7A7" TextChanged="quantity_TextChanged"/>
+                <TextBox Grid.Column="2" x:Name="hour" 
+                         HorizontalAlignment="Left" VerticalAlignment="Top"
+                         Height="25" Width="40" Margin="60,135,0,0" 
+                         TextWrapping="Wrap" Text="" 
+                         BorderThickness="1" BorderBrush="#FFADA7A7"/>
+                <TextBox Grid.Column="2" x:Name="minute" 
+                         HorizontalAlignment="Left" VerticalAlignment="Top"
+                         Height="25" Width="40" Margin="120,135,0,0" 
+                         TextWrapping="Wrap" Text="" 
+                         BorderThickness="1" BorderBrush="#FFADA7A7"/>
+                <TextBox Grid.Column="3" Grid.ColumnSpan="10"  x:Name="voucher" 
+                         HorizontalAlignment="Left" VerticalAlignment="Top"
+                         Height="25" Width="120" Margin="30,295,0,0" 
+                         TextWrapping="Wrap" Text=""
+                         BorderThickness="1" BorderBrush="#FFADA7A7"/>
+
+                <ComboBox Grid.Column="3" Grid.ColumnSpan="10" x:Name="cbDay" 
+                          HorizontalAlignment="Left"  VerticalAlignment="Top"
+                          Height="25" Width="50" Margin="-30,135,0,0"
+                          BorderThickness="1" BorderBrush="#FFADA7A7"/>
+
+                <ComboBox Grid.Column="3" Grid.ColumnSpan="10" x:Name="cbMonth" 
+                          HorizontalAlignment="Left" VerticalAlignment="Top"
+                          Height="25" Width="50" Margin="35,135,0,0"
+                          BorderThickness="1" BorderBrush="#FFADA7A7"/>
+
+                <ComboBox Grid.Column="3" Grid.ColumnSpan="10" x:Name="cbYear" 
+                          HorizontalAlignment="Left"  VerticalAlignment="Top"
+                          Height="25" Width="50" Margin="100,135,0,0"
+                          BorderThickness="1" BorderBrush="#FFADA7A7"/>
+
+            </Grid>
+        </Border>
+    </Border>
+</Window>
