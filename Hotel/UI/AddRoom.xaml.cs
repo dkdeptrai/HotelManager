@@ -14,7 +14,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Drawing;
+using Microsoft.Win32;
+using System.IO;
 namespace Hotel.UI
 {
     /// <summary>
@@ -22,25 +24,35 @@ namespace Hotel.UI
     /// </summary>
     public partial class AddRoom : Window
     {
+        public BitmapImage bitmapImage;
         public AddRoom()
         {
             InitializeComponent();
+            IDataConnection db = GlobalConfig.Connection;
+            var Choices = db.GetRoomTypes();
+            TxtRoomType.ItemsSource = Choices;
         }
 
-        private void RoomsView_Loaded(object sender, RoutedEventArgs e)
-        {
-            IDataConnection db = GlobalConfig.Connection;
-            RoomsView.ItemsSource = db.GetAllRooms();
-        }
+        //private void RoomsView_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    IDataConnection db = GlobalConfig.Connection;
+        //    RoomsView.ItemsSource = db.GetAllRooms();
+        //}
 
         private void BtnAddRoom_Click(object sender, RoutedEventArgs e)
         {
             if (InputValidation())
             {
+                byte[] imgData = new byte[bitmapImage.StreamSource.Length];
+                bitmapImage.StreamSource.Seek(0, SeekOrigin.Begin);
+                bitmapImage.StreamSource.Read(imgData, 0, imgData.Length);
+                
+                
                 RoomModel model = new RoomModel(
                     TxtRoomNum.Text,
                     TxtRoomType.Text,
-                    RoomPrice.Text);
+                    RoomPrice.Text,
+                    imgData);
 
                 IDataConnection db = GlobalConfig.Connection;
                 try
@@ -49,7 +61,7 @@ namespace Hotel.UI
                     {
                         MessageBox.Show("Room Added Successfuly!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearFields();
-                        RoomsView_Loaded(this, null);
+                        //RoomsView_Loaded(this, null);
                     }
                     else
                     {
@@ -107,6 +119,26 @@ namespace Hotel.UI
             TxtRoomNum.Text = "";
             TxtRoomType.Text = "";
             RoomPrice.Text = "";
+        }
+        private void Cancel_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnAddImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog OpenFile = new OpenFileDialog();
+            OpenFile.Multiselect = false;
+            OpenFile.Title = "Select Picture(s)";
+            OpenFile.Filter = "ALL supported Graphics| *.jpeg; *.jpg;*.png;";
+            if (OpenFile.ShowDialog() == true)
+            {
+                bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = new FileStream(OpenFile.FileName, FileMode.Open, FileAccess.Read);    
+                bitmapImage.EndInit();
+                BtnAddImage.Source = bitmapImage;
+            }
         }
     }
 }

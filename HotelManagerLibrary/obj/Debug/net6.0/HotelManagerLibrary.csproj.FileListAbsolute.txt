@@ -10,18 +10,6 @@ D:\Programming\MyHotel\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.
 D:\Programming\MyHotel\HotelManagerLibrary\obj\Debug\net6.0\refint\HotelManagerLibrary.dll
 D:\Programming\MyHotel\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.pdb
 D:\Programming\MyHotel\HotelManagerLibrary\obj\Debug\net6.0\ref\HotelManagerLibrary.dll
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.deps.json
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.dll
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.pdb
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.csproj.AssemblyReference.cache
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.GeneratedMSBuildEditorConfig.editorconfig
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.AssemblyInfoInputs.cache
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.AssemblyInfo.cs
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.csproj.CoreCompileInputs.cache
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.dll
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\refint\HotelManagerLibrary.dll
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.pdb
-D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\ref\HotelManagerLibrary.dll
 D:\University\LTTQ\project\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.deps.json
 D:\University\LTTQ\project\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.dll
 D:\University\LTTQ\project\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.pdb
@@ -46,3 +34,15 @@ D:\Visual Studio\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerL
 D:\Visual Studio\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\refint\HotelManagerLibrary.dll
 D:\Visual Studio\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.pdb
 D:\Visual Studio\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\ref\HotelManagerLibrary.dll
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.deps.json
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.dll
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\bin\Debug\net6.0\HotelManagerLibrary.pdb
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.csproj.AssemblyReference.cache
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.AssemblyInfoInputs.cache
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.AssemblyInfo.cs
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.csproj.CoreCompileInputs.cache
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.dll
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\refint\HotelManagerLibrary.dll
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\HotelManagerLibrary.pdb
+D:\Programming\HotelManager\HotelManager\HotelManagerLibrary\obj\Debug\net6.0\ref\HotelManagerLibrary.dll

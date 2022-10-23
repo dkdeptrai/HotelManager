@@ -1,9 +1,9 @@
-﻿<Window x:Class="AddRoom.MainWindow"
+﻿<Window x:Class="Hotel.UI.AddRoom"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AddRoom"
+        xmlns:local="clr-namespace:Hotel.UI"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStyle="None"
@@ -78,15 +78,15 @@
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="50" ></ColumnDefinition>
-                        <ColumnDefinition Width="250"></ColumnDefinition>
+                        <ColumnDefinition Width="120" ></ColumnDefinition>
+                        <ColumnDefinition Width="180"></ColumnDefinition>
                         <ColumnDefinition Width="100"></ColumnDefinition>
                         <ColumnDefinition Width="200"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
                         <TextBlock  
-                            Text="ID: "
+                            Text="Room Num: "
                             Foreground="Black"
                             FontSize="20"
                             VerticalAlignment="Center"
@@ -95,14 +95,14 @@
                     </Grid>
                     <Grid Grid.Column="2">
                         <TextBox
-                            x:Name="NameTextBox"
+                            Name="TxtRoomNum"
                             FontSize="20"
                             VerticalAlignment="Center">
                         </TextBox>
                     </Grid>
                     <Grid Grid.Column="3">
                         <TextBlock  
-                            Text="Floor: "
+                            Text="Price: "
                             Foreground="Black"
                             FontSize="20"
                             VerticalAlignment="Center"
@@ -111,7 +111,7 @@
                     </Grid>
                     <Grid Grid.Column="4">
                         <TextBox
-                            x:Name="NameTextBox1"
+                            x:Name="RoomPrice"
                             FontSize="20"
                             VerticalAlignment="Center">
                         </TextBox>
@@ -120,7 +120,7 @@
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="100" ></ColumnDefinition>
+                        <ColumnDefinition Width="110" ></ColumnDefinition>
                         <ColumnDefinition Width="200"></ColumnDefinition>
                         <ColumnDefinition Width="100"></ColumnDefinition>
                         <ColumnDefinition Width="200"></ColumnDefinition>
@@ -128,7 +128,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
                         <TextBlock  
-                            Text="Type ID: "
+                            Text="Room type: "
                             Foreground="Black"
                             
                             FontSize="20"
@@ -137,30 +137,46 @@
                             />
                     </Grid>
                     <Grid Grid.Column="2">
-                        <TextBox
-                            x:Name="NameTextBox2"
+                        <ComboBox
+                            x:Name="TxtRoomType"
                             FontSize="20"
                             VerticalAlignment="Center">
-                        </TextBox>
+                        </ComboBox>
                     </Grid>
 
                 </Grid>
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="600"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="400"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="166"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
                         <StackPanel>
                             <TextBox
                             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                            Height="166"
-                            materialDesign:HintAssist.Hint="Note:"
+                            Height="170"
+                            materialDesign:HintAssist.Hint="Description:"
                                FontSize="20"
                                VerticalContentAlignment="Top"
                             IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" />
                         </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="3">
+
+                        <Image
+                                Name="BtnAddImage"
+                                ToolTip="MaterialDesignFlatAccentBackgroundButton"
+                                Height="170"
+                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+                                materialDesign:ButtonAssist.CornerRadius="4"
+                                Source="Resources\Image\AddImage.png"
+                                MouseDown="BtnAddImage_MouseLeftButtonDown">
+                        </Image>
+
+
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="6">
@@ -173,6 +189,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
                         <Button
+                                Name="BtnCancel"
                                 Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
                                 ToolTip="MaterialDesignFlatAccentBackgroundButton"
                                 Width="140"
@@ -185,10 +202,11 @@
                                 FontFamily="Arial"
                                 Background="#ef476f"
                                 Foreground="#FFE3E8E9" BorderThickness="0"
-                                materialDesign:ButtonAssist.CornerRadius="4"/>
+                                materialDesign:ButtonAssist.CornerRadius="4" Click="Cancel_Button_Click"/>
                     </Grid>
                     <Grid Grid.Column="3">
                         <Button
+                                Name="BtnAddRoom"
                                 Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
                                 ToolTip="MaterialDesignFlatAccentBackgroundButton"
                                 Width="140"
@@ -201,7 +219,7 @@
                                 FontFamily="Arial"
                                Background="#119DA4"
                                 Foreground="#FFE3E8E9" BorderThickness="0"
-                                materialDesign:ButtonAssist.CornerRadius="4"/>
+                                materialDesign:ButtonAssist.CornerRadius="4" Click="BtnAddRoom_Click"/>
                     </Grid>
                 </Grid>
 

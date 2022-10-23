@@ -8,14 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="UI\ViewModels\**" />
-    <Compile Remove="UI\Views\**" />
-    <EmbeddedResource Remove="UI\ViewModels\**" />
-    <EmbeddedResource Remove="UI\Views\**" />
-    <None Remove="UI\ViewModels\**" />
-    <None Remove="UI\Views\**" />
-    <Page Remove="UI\ViewModels\**" />
-    <Page Remove="UI\Views\**" />
+    <None Remove="UI\Resources\Image\AddImage.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +22,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HotelManagerLibrary\HotelManagerLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UI\Resources\Image\AddImage.png" />
   </ItemGroup>
 
 </Project>

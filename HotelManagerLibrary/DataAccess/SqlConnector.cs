@@ -29,6 +29,7 @@ namespace HotelManagerLibrary.DataAccess
                 p.Add("@RoomNum", model.RoomNum);
                 p.Add("@RoomType", model.RoomType);
                 p.Add("@Price", model.Price);
+                p.Add("@Overview", model.Overview);
                 try
                 {
                     if(!CheckExistence("Rooms", "RoomNum", model.RoomNum))
@@ -163,6 +164,23 @@ namespace HotelManagerLibrary.DataAccess
             connection.Close();
             }
             return model;
+        }
+
+        public List<RoomTypeModel> GetRoomTypes()
+        {
+            List<RoomTypeModel> RoomTypes = new List<RoomTypeModel>();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
+            {
+                var cmd = new SqlCommand("SELECT TypeName FROM RoomTypes", (SqlConnection)connection);
+                connection.Open();
+                var reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    RoomTypes.Add(new RoomTypeModel(reader.GetString(0)));
+                }
+                connection.Close();
+            }
+                return RoomTypes;
         }
     }
 }

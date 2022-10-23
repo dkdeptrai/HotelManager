@@ -16,5 +16,7 @@ namespace HotelManagerLibrary.DataAccess
         List<StaffModel> GetAllStaffs();
         StaffModel StaffLogin(string LoginID, string Password);
 
+        List<RoomTypeModel> GetRoomTypes();
+
     }
 }
