@@ -26,8 +26,8 @@ CREATE PROCEDURE dbo.spRooms_Insert
 AS
 BEGIN
 	SET NOCOUNT ON;
-	INSERT INTO dbo.Rooms(RoomNum, RoomType, Price, Overview)
-	VALUES(@RoomNum, @RoomType, @Price, @Overview)
+	INSERT INTO dbo.Rooms(RoomNum, RoomType, Price, Overview, Booked)
+	VALUES(@RoomNum, @RoomType, @Price, @Overview, 'No')
 
 END
 GO

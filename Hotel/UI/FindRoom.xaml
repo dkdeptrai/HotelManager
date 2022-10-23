@@ -1,11 +1,12 @@
-<Window x:Class="Hotel.UI.DeleteRoom"
+<Window x:Class="Hotel.UI.FindRoom"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotel.UI"
+        ResizeMode="CanResize"
         mc:Ignorable="d"
-        Title="DeleteRoom" Height="200" Width="400"
+        Title="FindRoom" Height="500" Width="400"
         WindowStyle="ToolWindow">
     <Window.Resources>
         <ControlTemplate x:Key="template1" TargetType="Button">
@@ -45,11 +46,11 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btnDelete"
+                <Button x:Name="BtnFind"
                         Foreground="#fff"
-                        Content="Delete Room"
+                        Content="Find Room"
                         Background="#EF476F"
-                        Click="btnDelete_Click">
+                        Click="BtnFind_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="4"/>
@@ -57,6 +58,32 @@
                     </Button.Resources>
                 </Button>
             </DockPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Room Num: " />
+                        <TextBlock Name="TxtBlockRoomNum"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Room Type: " />
+                        <TextBlock Name="TxtBlockRoomType"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Room Price: " />
+                        <TextBlock Name="TxtBlockRoomPrice"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Booked: " />
+                        <TextBlock Name="TxtBlockRoomStatus"/>
+                    </StackPanel>
+                </StackPanel>
+                <Image Name="OverviewImage" Grid.Column="1" />
+            </Grid>
+            <Button Name="BtnDeleteRoom" Content="Delete This Room" Click="BtnDeleteRoom_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

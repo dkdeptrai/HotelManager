@@ -66,8 +66,34 @@ namespace HotelManagerLibrary.DataAccess
                     return false;
                 }
             }
-
         }
+
+        public RoomModel FindRoom(string RoomNum)
+        {
+            RoomModel model = null;
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@RoomNum", RoomNum);
+                if (CheckExistence("Rooms", "RoomNum", RoomNum))
+                {
+                    var reader = connection.ExecuteReader("dbo.spRooms_View", p, commandType: CommandType.StoredProcedure);
+                    while(reader.Read())
+                    {
+                        model = new RoomModel();
+                        model.RoomNum = reader["RoomNum"].ToString();
+                        model.RoomType = reader["RoomType"].ToString();
+                        model.Price = Convert.ToDecimal(reader["Price"]);
+                        model.RoomType = reader["Booked"].ToString();
+                        model.RoomType = reader["Booked"].ToString();
+                        model.Overview = reader["Overview"] as byte[];
+                    }
+                }
+            }
+            return model;
+        }
+
 
         public List<RoomModel> GetAllRooms()
         {

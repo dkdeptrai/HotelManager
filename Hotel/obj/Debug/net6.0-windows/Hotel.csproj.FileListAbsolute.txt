@@ -150,7 +150,6 @@ D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\AddRo
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\AddService.g.cs
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\AddStaff.g.cs
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\CheckOut.g.cs
-D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\DeleteRoom.g.cs
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\Login.g.cs
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\MainWindow.g.cs
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\PlaceOrder.g.cs
@@ -162,7 +161,6 @@ D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\AddRo
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\AddService.baml
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\AddStaff.baml
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\CheckOut.baml
-D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\DeleteRoom.baml
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\Login.baml
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\MainWindow.baml
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\PlaceOrder.baml
@@ -177,3 +175,5 @@ D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\refint\H
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\Hotel.pdb
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\Hotel.genruntimeconfig.cache
 D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\ref\Hotel.dll
+D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\FindRoom.g.cs
+D:\Programming\HotelManager\HotelManager\Hotel\obj\Debug\net6.0-windows\UI\FindRoom.baml

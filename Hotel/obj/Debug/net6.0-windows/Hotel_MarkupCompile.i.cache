@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Programming\HotelManager\HotelManager\Hotel\App.xaml
-81349664421
+8989314571
 
-12-745396300
+12-1122018842
 2011496680021
-UI\AddRoom.xaml;UI\AddService.xaml;UI\AddStaff.xaml;UI\CheckOut.xaml;UI\DeleteRoom.xaml;UI\Login.xaml;UI\MainWindow.xaml;UI\PlaceOrder.xaml;
+UI\AddRoom.xaml;UI\AddService.xaml;UI\AddStaff.xaml;UI\CheckOut.xaml;UI\FindRoom.xaml;UI\Login.xaml;UI\MainWindow.xaml;UI\PlaceOrder.xaml;
 
 False
 

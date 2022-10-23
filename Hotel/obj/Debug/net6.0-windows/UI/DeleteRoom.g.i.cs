@@ -77,7 +77,7 @@ namespace Hotel.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Hotel;component/ui/deleteroom.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Hotel;V1.0.0.0;component/ui/deleteroom.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UI\DeleteRoom.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

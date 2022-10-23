@@ -19,7 +19,7 @@ namespace Hotel
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             HotelManagerLibrary.GlobalConfig.InitializeConnection();
-            AddRoom window = new AddRoom();
+            FindRoom window = new FindRoom();
             window.Show();
         }
     }
