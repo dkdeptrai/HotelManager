@@ -561,9 +561,6 @@
                             </materialDesign:ColorZone>
                         </Grid>
 
-
-
-
                     </Grid>
 
                     <Grid Grid.Column="3">
@@ -577,28 +574,7 @@
                             </Button.RenderTransform>
                         </Button>
                     </Grid>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </Grid>
-
-
-
-
-
-
             </Grid>
         </Border>
     </Border>
