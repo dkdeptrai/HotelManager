@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hotel.UI"
         ResizeMode="CanResize"
         mc:Ignorable="d"
-        Title="FindRoom" Height="500" Width="400"
+        Title="FindRoom" Height="340" Width="400"
         WindowStyle="ToolWindow">
     <Window.Resources>
         <ControlTemplate x:Key="template1" TargetType="Button">
@@ -21,11 +21,12 @@
             <Setter Property="Height" Value="32"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="#fff"/>
         </Style>
     </Window.Resources>
     <Grid>
         <StackPanel  Margin="32">
-            <DockPanel Margin="0 0 0 16">
+            <DockPanel>
                 <Label Content="Room number: " FontSize="12"/>
                 <TextBox Name="TxtRoomNum"
                          VerticalAlignment="Center"
@@ -38,7 +39,6 @@
                         Content="Cancel" 
                         Background="#aaa"
                         Margin="0 0 32 0"
-                        Foreground="#fff"
                         Click="btnCancel_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -47,9 +47,8 @@
                     </Button.Resources>
                 </Button>
                 <Button x:Name="BtnFind"
-                        Foreground="#fff"
                         Content="Find Room"
-                        Background="#EF476F"
+                        Background="#119DA4"
                         Click="BtnFind_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -64,26 +63,46 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Room Num: " />
+                    <DockPanel>
+                        <Label Content="Room Num: " />
                         <TextBlock Name="TxtBlockRoomNum"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Room Type: " />
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="Room Type: " />
                         <TextBlock Name="TxtBlockRoomType"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Room Price: " />
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="Room Price: " />
                         <TextBlock Name="TxtBlockRoomPrice"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Booked: " />
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="Booked: " />
                         <TextBlock Name="TxtBlockRoomStatus"/>
-                    </StackPanel>
+                    </DockPanel>
                 </StackPanel>
-                <Image Name="OverviewImage" Grid.Column="1" />
+                <Border Grid.Column="1"
+                        BorderBrush="#bdbdbd"
+                        CornerRadius="4"
+                        BorderThickness="1">
+                    <Border.Background>
+                        <ImageBrush x:Name="OverviewImage"
+                                    ImageSource="Resources\Image\img_default.png"
+                                    Stretch="UniformToFill"/>
+                    </Border.Background>
+                </Border>
             </Grid>
-            <Button Name="BtnDeleteRoom" Content="Delete This Room" Click="BtnDeleteRoom_Click"></Button>
+            <Button Name="BtnDeleteRoom" 
+                    Background="#EF476F"
+                    Content="Delete This Room" 
+                    Click="BtnDeleteRoom_Click"
+                    Margin="0 24"
+                    IsEnabled="False">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

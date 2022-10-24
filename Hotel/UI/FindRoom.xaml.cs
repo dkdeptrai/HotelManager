@@ -52,7 +52,9 @@ namespace Hotel.UI
                         newBitmapImage.StreamSource = ms;
                         newBitmapImage.EndInit();
 
-                        OverviewImage.Source = newBitmapImage;
+                        OverviewImage.ImageSource = newBitmapImage;
+
+                        BtnDeleteRoom.IsEnabled = true;
                     }
                     else
                     {
