@@ -1,0 +1,605 @@
+﻿<Window x:Class="Services.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Services"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        
+        FontFamily="Eras Light ITC"
+        WindowStyle="None" AllowsTransparency="True" 
+        Title="MainWindow" Height="750" Width="1100" Background="Transparent" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" Loaded="Window_Loaded">
+    <Border Background="#F7F3E3" CornerRadius="20" >
+        <Border BorderBrush="Transparent" BorderThickness="0" CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <materialDesign:ColorZone
+                        Mode="PrimaryDark"
+                        Padding="10"
+                        CornerRadius="20,20,0,0"
+                        ClipToBounds="False" Grid.ColumnSpan="20" Height="60" 
+                        Background="White"/>
+                    <Grid Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="160"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition Width="50"></ColumnDefinition>
+                            <ColumnDefinition Width="50"></ColumnDefinition>
+                            <ColumnDefinition Width="50"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="Hotel Manager" 
+                                   Foreground="#033F63" FontSize="16" FontWeight="Bold" 
+                                   Padding="20"/>
+                        <TextBlock Grid.Column="2" Grid.ColumnSpan="10" Text="Receptionist One"
+                                   Foreground="#033F63" FontSize="16" FontWeight="Bold" 
+                                   Padding="20"/>
+
+                        <Button
+                            Style="{StaticResource MaterialDesignToolButton}"
+                            Grid.Column="2"
+                            Margin="80,0,0,0" >
+                            <materialDesign:PackIcon Kind="AccountCircle"
+                            Height="50" Width="30" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            Foreground="#033F63"/>
+                        </Button>
+
+                        <Button
+                            Style="{StaticResource MaterialDesignToolButton}"
+                            Grid.Column="2"
+                            Margin="150,0,0,0">
+                            <materialDesign:PackIcon Kind="ChevronDown" Height="40" Width="40"                          
+                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            Foreground="Black"/>
+                        </Button>
+
+                        <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource MaterialDesignToolButton}"
+                        Height="60"
+                        Grid.Column="3" Width="30" Click="Button_Click_2" >
+                            <materialDesign:PackIcon Kind="WindowMinimize"
+                                                 Height="30" Width="30" Foreground="Black"
+                                                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+
+                        <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource MaterialDesignToolButton}"
+                        Height="60"
+                        Grid.Column="4" Width="30" Click="Button_Click_3" >
+                            <materialDesign:PackIcon Kind="WindowMaximize"
+                                                 Height="30" Width="30" Foreground="Black"
+                                                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+                        
+                        <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource MaterialDesignToolButton}"
+                        Height="60"
+                        Grid.Column="5" Width="30" Click="Button_Click_1">
+
+                            <materialDesign:PackIcon Kind="WindowClose"
+                                                 Height="30" Width="30" Foreground="Black"
+                                                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+                        
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid Grid.Column="1" Grid.ColumnSpan="10" Margin="0,70,0,0">
+                        
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="80,0,0,0" 
+                                      Width="Auto" Height="580"
+                                      HorizontalAlignment="Left" VerticalAlignment="Top">
+                            
+                            <WrapPanel Orientation="Horizontal">
+                                <WrapPanel.Resources>
+                                    
+                                    <Style x:Key="DPanel" TargetType="DockPanel">
+                                        <Setter Property="LastChildFill" Value="False"/>
+                                        <Setter Property="Height" Value="200"/>
+                                        <Setter Property="Width" Value="170"/>
+                                        <Setter Property="Margin" Value="15,20,0,0"/>
+                                    </Style>
+                                    <Style x:Key="ImageButton" TargetType="Button">
+                                        <Setter Property="DockPanel.Dock" Value="Top"/>
+                                        <Setter Property="Height" Value="100"/>
+                                        <Setter Property="Width" Value="170"/>
+                                        <Setter Property="BorderThickness" Value="5"/>
+                                    </Style>
+                                    <Style x:Key="StPanel1" TargetType="StackPanel">
+                                        <Setter Property="Margin" Value="5,-5,0,0"/>
+                                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                                        <Setter Property="VerticalAlignment" Value="Top"/>
+                                    </Style>
+                                    <Style x:Key="Label1" TargetType="Label">
+                                        <Setter Property="Height" Value="25"/>
+                                        <Setter Property="Width" Value="165"/>
+                                        <Setter Property="Margin" Value="0,5,0,0"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Style>
+                                    <Style x:Key="Label2" TargetType="Label">
+                                        <Setter Property="Height" Value="25"/>
+                                        <Setter Property="Width" Value="165"/>
+                                        <Setter Property="Margin" Value="0,-5,0,0"/>
+                                    </Style>
+                                    <Style x:Key="Description" TargetType="TextBox">
+                                        <Setter Property="Height" Value="Auto"/>
+                                        <Setter Property="Width" Value="165"/>
+                                        <Setter Property="IsReadOnly" Value="True"/>
+                                        <Setter Property="Foreground" Value="#FFC3BFBF"/>
+                                        <Setter Property="AcceptsReturn" Value="True"/>
+                                        <Setter Property="TextWrapping" Value="Wrap"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                    </Style>
+                                    
+                                </WrapPanel.Resources>
+                                
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Style="{StaticResource DPanel}">
+                                    <Button Style="{StaticResource ImageButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        </Button.Background>
+                                    </Button>
+                                    <Border Background="White">
+                                        <StackPanel Style="{StaticResource StPanel1}">
+                                            <Label Style="{StaticResource Label1}" 
+                                                   Content="English breakfast"/>
+                                            <Label Style="{StaticResource Label2}"  
+                                                    Content="40.000 VND"/>
+                                            <TextBox Style="{StaticResource Description}" 
+                                                Text="Description...Description...Description...Description...Description...Description..." />
+                                        </StackPanel>
+                                    </Border>
+                                </DockPanel>
+                            </WrapPanel>
+                        </ScrollViewer>
+                        
+                    </Grid>
+
+                    <Grid Grid.Column="0" Background="#FFEFEFEF">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="120"/>
+                            <RowDefinition Height="350"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="150"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock x:Name="xTime"
+                                Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat={}{0:HH:mm}}"
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                FontSize="35" Margin="0,-10,0,0" Foreground="#033F63" 
+                                />
+                            <TextBlock x:Name="xDate"
+                                Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat={}{0:ddd dd/MM/yy}}"
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                FontSize="15" Margin="-20,60,0,0" Foreground="#033F63" />
+                            <Button
+                            Style="{StaticResource MaterialDesignToolButton}"
+                            Margin="110,60,0,0">
+                                <materialDesign:PackIcon Kind="ChevronDown" Height="30" Width="30"                          
+                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            Foreground="Black"/>
+                            </Button>
+
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Button 
+                    Background="#FFEFE6BF" Foreground="#033F63" Content="Rooms" 
+                        HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="#FFEFE6BF"
+                        Height="50" Margin="0,0,0,0" Width="150" FontSize="16" FontWeight="Thin"
+                                materialDesign:ButtonAssist.CornerRadius="8"
+                                />
+                            <Button 
+                    Background="#F7F3E3" Foreground="#033F63" Content="Services" 
+                        HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="#F7F3E3"
+                        Height="50" Margin="0,70,0,0" Width="150" FontSize="16" FontWeight="Thin"
+                                materialDesign:ButtonAssist.CornerRadius="8"
+                                />
+                            <Button 
+                    Background="#FFEFE6BF" Foreground="#033F63" Content="Check Out" 
+                        HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="#FFEFE6BF"
+                        Height="50" Margin="0,140,0,0" Width="150" FontSize="16" FontWeight="Thin"
+                                materialDesign:ButtonAssist.CornerRadius="8"
+                                />
+                            <Button 
+                    Background="#FFEFE6BF" Foreground="#033F63" Content="Report" 
+                        HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="#FFEFE6BF"
+                        Height="50" Margin="0,210,0,0" Width="150" FontSize="16" FontWeight="Thin"
+                                materialDesign:ButtonAssist.CornerRadius="8"
+                                />
+                        </Grid>
+                        <Grid Grid.Row="2">
+
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Button 
+                    Background="#119DA4" Foreground="White" Content="ADD"  
+                        HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#119DA4"
+                        Height="35" Margin="0,0,0,0" Width="130" FontSize="16" FontWeight="Thin"
+                                materialDesign:ButtonAssist.CornerRadius="8" Click="Button_Click_Add"
+                                />
+                            <Button
+                                Background="#EF476F" Foreground="White" Content="End Task" 
+                        HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#EF476F"
+                        Height="35" Margin="0,50,0,0"  Width="130" FontSize="16" FontWeight="Thin"
+                                materialDesign:ButtonAssist.CornerRadius="8" Click="Button_Click_1"
+                                />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Label Content="View:"
+                               HorizontalAlignment="Left" VerticalAlignment="Top"
+                               Height="30" Width="80" Margin="0,40,0,0"
+                               FontSize="16"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <materialDesign:ColorZone
+                                    Mode="Standard"
+                                    CornerRadius="13"
+                                    Panel.ZIndex="1"
+                                    Margin="0,40,0,0"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="30">
+                                <ComboBox x:Name="cbView"
+                                  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                  Height="30" Width="50"  BorderThickness="0"
+                                  Background="White"/>
+                            </materialDesign:ColorZone>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Label Content="Filter by:"
+                               HorizontalAlignment="Left" VerticalAlignment="Top"
+                               Height="30" Width="80" Margin="30,40,0,0"
+                               FontSize="16"/>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <materialDesign:ColorZone
+                                    Mode="Standard"
+                                    CornerRadius="13"
+                                    Panel.ZIndex="1"
+                                    Margin="0,40,0,0"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="30" UseLayoutRounding="False">
+                                <ComboBox x:Name="cbPrice"
+                                  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                  Height="30" Width="50" BorderThickness="0"
+                                  materialDesign:HintAssist.Hint="Price"
+                                  Background="White"/>
+                            </materialDesign:ColorZone>
+                        </Grid>
+                        <Grid Grid.Column="5">
+                            <materialDesign:ColorZone
+                                    Mode="Standard"
+                                    CornerRadius="13"
+                                    Panel.ZIndex="1"
+                                    Margin="0,40,0,0"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="30" UseLayoutRounding="False">
+                                <ComboBox x:Name="cbType"
+                                  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                  Height="30" Width="50" BorderThickness="0"
+                                  materialDesign:HintAssist.Hint="Type"
+                                  Background="White"
+                                  />
+                            </materialDesign:ColorZone>
+                        </Grid>
+                        <Grid Grid.Column="6">
+                            <Button
+                                        Style="{StaticResource MaterialDesignToolButton}" 
+                                        HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                        Margin="0,40,0,0" Height="30" Width="30" 
+                                        Background="#F7F3E3">
+                                <materialDesign:PackIcon
+                                    Kind="Search" Height="20" Width="20" 
+                                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                                    Background="#F7F3E3">
+                                </materialDesign:PackIcon>
+                            </Button>
+                        </Grid>
+                        <Grid Grid.Column="7">
+
+                            <materialDesign:ColorZone
+                                    Mode="Standard"
+                                    CornerRadius="13"
+                                    Panel.ZIndex="1"
+                                    Margin="0,40,0,0"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="30">
+                                <TextBox x:Name="searchID" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Height="30" Width="180" BorderThickness="0"
+                                   Background="White"
+                                   materialDesign:HintAssist.Hint="Search by ID"/>
+                            </materialDesign:ColorZone>
+                        </Grid>
+
+
+
+
+                    </Grid>
+
+                    <Grid Grid.Column="3">
+                        <Button Background="#EF476F" Foreground="White" Content="Report a problem"
+                        HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderBrush="#EF476F"
+                        Height="35" Margin="0,0,-100,30"  Width="150" FontSize="16" FontWeight="Thin"
+                                materialDesign:ButtonAssist.CornerRadius="8" Click="Button_Click_Report"
+                                >
+                            <Button.RenderTransform>
+                                <RotateTransform CenterX="0" CenterY="0" Angle="270" />
+                            </Button.RenderTransform>
+                        </Button>
+                    </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </Grid>
+
+
+
+
+
+
+            </Grid>
+        </Border>
+    </Border>
+</Window>
