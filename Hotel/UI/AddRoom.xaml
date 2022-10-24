@@ -13,7 +13,7 @@
 
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="MinWidth" Value="180"/>
+            <Setter Property="MinWidth" Value="160"/>
             <Setter Property="Height" Value="60"/>
             <Setter Property="Foreground" Value="#fff"/>
             <Setter Property="FontSize" Value="20"/>
@@ -23,6 +23,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style TargetType="Label">
+            <Setter Property="MinWidth" Value="120"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Foreground" Value="#202020"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -95,18 +96,18 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
-                        <Label Content="Room Num:"/>
+                        <Label Content="Room Num:" Width="120"/>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <TextBox
-                            Name="TxtRoomNum"
-                            FontSize="20"
-                            VerticalAlignment="Center"
-                            BorderBrush="#bdbdbd">
+                        <TextBox Name="TxtRoomNum" 
+                                 FontSize="20"
+                                 VerticalAlignment="Center"
+                                 BorderBrush="#bdbdbd">
                         </TextBox>
                     </Grid>
                     <Grid Grid.Column="3">
-                        <Label Content="Price:"/>
+                        <Label Content="Price:"
+                               HorizontalContentAlignment="Right"/>
                     </Grid>
                     <Grid Grid.Column="4">
                         <TextBox
@@ -127,7 +128,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
-                        <Label Content="Room type:"/>
+                        <Label Content="Room type:" Width="120"/>
                     </Grid>
                     <Grid Grid.Column="2">
                         <ComboBox x:Name="TxtRoomType"
@@ -171,8 +172,6 @@
                                             ImageSource="Resources\Image\AddImage.png"/>
                             </Border.Background>
                         </Border>
-
-
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="6">
