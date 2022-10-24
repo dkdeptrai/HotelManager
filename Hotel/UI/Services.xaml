@@ -156,7 +156,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -173,7 +173,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                           <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -190,7 +190,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                        <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -207,7 +207,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -224,7 +224,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -241,7 +241,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -258,7 +258,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                           <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -275,7 +275,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -292,7 +292,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -309,7 +309,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -326,7 +326,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -343,7 +343,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -360,7 +360,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
@@ -377,7 +377,7 @@
                                 <DockPanel Style="{StaticResource DPanel}">
                                     <Button Style="{StaticResource ImageButton}">
                                         <Button.Background>
-                                            <ImageBrush ImageSource="D:\hocky3\5_LTTQ\DACK\Ebreakfast.jpg" />
+                                            <ImageBrush ImageSource="Resources/Image/Ebreakfast.jpg" />
                                         </Button.Background>
                                     </Button>
                                     <Border Background="White">
