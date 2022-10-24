@@ -9,7 +9,8 @@
         FontFamily="Eras Light ITC"
         Title="MainWindow" 
         Height="460" Width="480" Background="Transparent"
-        WindowStyle="None" AllowsTransparency="True" Loaded="Window_Loaded">
+        WindowStyle="None" AllowsTransparency="True" 
+        Loaded="Window_Loaded" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Border Background="White" CornerRadius="20" >
         <Border BorderBrush="Transparent" BorderThickness="0" CornerRadius="10">
             <Grid>
