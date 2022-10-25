@@ -808,19 +808,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\khoa\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\HotelManager\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Documents\\GitHub\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
       "projectName": "HotelManagerLibrary",
-      "projectPath": "D:\\Programming\\HotelManager\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
-      "packagesPath": "C:\\Users\\khoa\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\HotelManager\\HotelManager\\HotelManagerLibrary\\obj\\",
+      "projectPath": "C:\\Users\\ASUS\\Documents\\GitHub\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\Documents\\GitHub\\HotelManager\\HotelManagerLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -879,7 +879,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

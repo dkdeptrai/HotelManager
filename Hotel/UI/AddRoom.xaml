@@ -11,18 +11,37 @@
         AllowsTransparency="True" Background="Transparent"
         Title="MainWindow" Height="450" Width="800">
 
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="MinWidth" Value="160"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Foreground" Value="#fff"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="#202020"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
     <Border Background="White" CornerRadius="7" >
         <Border BorderBrush="White" BorderThickness="0" CornerRadius="10">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition Height="170"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition Height="60"></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" >
                     <materialDesign:ColorZone
@@ -32,43 +51,35 @@
                         ClipToBounds="False" Grid.ColumnSpan="5" Height="50" Background="#119DA4">
                         <Grid Height="50" Margin="0,-10,0,-10">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="200"></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition Width="50"></ColumnDefinition>
-                                <ColumnDefinition Width="50"></ColumnDefinition>
-                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
                             </Grid.ColumnDefinitions>
 
                             <Grid Grid.Column="0">
-                                <TextBlock>
-                             <TextBlock  
-                            Text="Add Room"
-                            Foreground="White"
-                           
-                            FontSize="20"
-                            Margin="50,10,10,10"
-                            FontFamily="Arial" Height="26" Width="105"
-                            />
-                        </TextBlock>
+                                <TextBlock  Text="Add Room"
+                                         Foreground="White"
+                                         FontSize="20"
+                                         Margin="50,10,10,10"
+                                         FontFamily="Arial" Height="26" Width="105"/>
                             </Grid>
                             <Grid Grid.Column="2">
-                                <Button
-                            Style="{StaticResource MaterialDesignToolButton}"
-                            Grid.Column="2" Grid.RowSpan="2">
+                                <Button Style="{StaticResource MaterialDesignToolButton}" 
+                                        Grid.Column="2" Grid.RowSpan="2">
                                     <materialDesign:PackIcon Kind="WindowMinimize" Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
                                 </Button>
                             </Grid>
                             <Grid Grid.Column="3">
-                                <Button
-                            Style="{StaticResource MaterialDesignToolButton}"
-                            Grid.Column="2" Grid.RowSpan="2">
+                                <Button Style="{StaticResource MaterialDesignToolButton}" 
+                                        Grid.Column="2" Grid.RowSpan="2">
                                     <materialDesign:PackIcon Kind="WindowMaximize" HorizontalAlignment="Center" Height="20" Width="20" VerticalAlignment="Center" FontWeight="Light" Foreground="LightGray" />
                                 </Button>
                             </Grid>
                             <Grid Grid.Column="4">
-                                <Button
-                            Style="{StaticResource MaterialDesignToolButton}"
-                            Grid.Column="2" Grid.RowSpan="2">
+                                <Button Style="{StaticResource MaterialDesignToolButton}"
+                                        Grid.Column="2" Grid.RowSpan="2">
                                     <materialDesign:PackIcon Kind="WindowClose" Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
                                 </Button>
                             </Grid>
@@ -77,149 +88,125 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="120" ></ColumnDefinition>
-                        <ColumnDefinition Width="180"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="200"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
-                        <TextBlock  
-                            Text="Room Num: "
-                            Foreground="Black"
-                            FontSize="20"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Center" FontFamily="Arial"
-                            />
+                        <Label Content="Room Num:" Width="120"/>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <TextBox
-                            Name="TxtRoomNum"
-                            FontSize="20"
-                            VerticalAlignment="Center">
+                        <TextBox Name="TxtRoomNum" 
+                                 FontSize="20"
+                                 VerticalAlignment="Center"
+                                 BorderBrush="#bdbdbd">
                         </TextBox>
                     </Grid>
                     <Grid Grid.Column="3">
-                        <TextBlock  
-                            Text="Price: "
-                            Foreground="Black"
-                            FontSize="20"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Center" FontFamily="Arial" Width="52"
-                            />
+                        <Label Content="Price:"
+                               HorizontalContentAlignment="Right"/>
                     </Grid>
                     <Grid Grid.Column="4">
                         <TextBox
                             x:Name="RoomPrice"
                             FontSize="20"
-                            VerticalAlignment="Center">
+                            VerticalAlignment="Center"
+                            BorderBrush="#bdbdbd">
                         </TextBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="110" ></ColumnDefinition>
-                        <ColumnDefinition Width="200"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="200"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
-                        <TextBlock  
-                            Text="Room type: "
-                            Foreground="Black"
-                            
-                            FontSize="20"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Center" FontFamily="Arial"
-                            />
+                        <Label Content="Room type:" Width="120"/>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <ComboBox
-                            x:Name="TxtRoomType"
-                            FontSize="20"
-                            VerticalAlignment="Center">
-                        </ComboBox>
+                        <ComboBox x:Name="TxtRoomType"
+                                  FontSize="20"
+                                  VerticalAlignment="Center"
+                                  BorderBrush="#bdbdbd"/>
                     </Grid>
 
                 </Grid>
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="400"></ColumnDefinition>
-                        <ColumnDefinition ></ColumnDefinition>
-                        <ColumnDefinition Width="166"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition Width=".7*"/>
+                        <ColumnDefinition Width="164"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
                         <StackPanel>
-                            <TextBox
-                            Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                            Height="170"
-                            materialDesign:HintAssist.Hint="Description:"
-                               FontSize="20"
-                               VerticalContentAlignment="Top"
-                            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" />
+                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                                     Height="160"
+                                     materialDesign:HintAssist.Hint="Description:"
+                                     FontSize="20" 
+                                     VerticalContentAlignment="Top"
+                                     BorderBrush="#bdbdbd"
+                                     IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" />
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Column="3">
-
-                        <Image
-                                Name="BtnAddImage"
+                        <Border BorderBrush="#bdbdbd"
+                                CornerRadius="4"
+                                Height="160"
+                                Margin="0 0 0 10"
+                                MouseDown="BtnAddImage_MouseLeftButtonDown"
                                 ToolTip="MaterialDesignFlatAccentBackgroundButton"
-                                Height="170"
                                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
-                                materialDesign:ButtonAssist.CornerRadius="4"
-                                Source="Resources\Image\AddImage.png"
-                                MouseDown="BtnAddImage_MouseLeftButtonDown">
-                        </Image>
-
-
+                                BorderThickness="1">
+                            <Border.Background>
+                                <ImageBrush x:Name="BtnAddImage"
+                                            materialDesign:ButtonAssist.CornerRadius="4"
+                                            ImageSource="Resources\Image\AddImage.png"/>
+                            </Border.Background>
+                        </Border>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="6">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="170" ></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="170"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width=".6*"/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="1">
-                        <Button
-                                Name="BtnCancel"
-                                Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
-                                ToolTip="MaterialDesignFlatAccentBackgroundButton"
-                                Width="140"
-                                Height="50"
+                        <Button Name="BtnCancel"
                                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                                 Content="Cancel" 
-                                FontSize="20" 
-                                HorizontalAlignment="Center"
-                                RenderTransformOrigin="0.484,-0.848"  
-                                FontFamily="Arial"
                                 Background="#ef476f"
-                                Foreground="#FFE3E8E9" BorderThickness="0"
-                                materialDesign:ButtonAssist.CornerRadius="4" Click="Cancel_Button_Click"/>
+                                Click="Cancel_Button_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
                     </Grid>
                     <Grid Grid.Column="3">
-                        <Button
-                                Name="BtnAddRoom"
-                                Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
-                                ToolTip="MaterialDesignFlatAccentBackgroundButton"
-                                Width="140"
-                                Height="50"
+                        <Button Name="BtnAddRoom"
                                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                                 Content="Confirm" 
-                                FontSize="20" 
-                                HorizontalAlignment="Center"
-                                RenderTransformOrigin="0.484,-0.848"  
-                                FontFamily="Arial"
-                               Background="#119DA4"
-                                Foreground="#FFE3E8E9" BorderThickness="0"
-                                materialDesign:ButtonAssist.CornerRadius="4" Click="BtnAddRoom_Click"/>
+                                Background="#119DA4"
+                                Click="BtnAddRoom_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
                     </Grid>
                 </Grid>
 
