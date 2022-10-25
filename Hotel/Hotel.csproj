@@ -9,6 +9,16 @@
 
   <ItemGroup>
     <None Remove="UI\Resources\Image\AddImage.png" />
+    <None Remove="UI\Resources\Image\Ebreakfast.jpg" />
+    <None Remove="UI\Resources\Image\img_default.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UI\Resources\Image\img_default.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UI\Resources\Image\Ebreakfast.jpg" />
   </ItemGroup>
 
   <ItemGroup>

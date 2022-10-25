@@ -208,5 +208,30 @@ namespace HotelManagerLibrary.DataAccess
             }
                 return RoomTypes;
         }
+        public RoomTypeModel CreateRoomType(RoomTypeModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@TypeName", model.TypeName);
+                try
+                {
+                    if (!CheckExistence("RoomTypes", "TypeName", model.TypeName))
+                    {
+                        connection.Execute("dbo.spRoomTypes_Insert", p, commandType: CommandType.StoredProcedure);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+            return model;
+        }
     }
 }

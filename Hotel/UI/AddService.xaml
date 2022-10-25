@@ -165,7 +165,7 @@
                                 CornerRadius="4"
                                 Height="160"
                                 Margin="0 0 0 10"
-                                MouseDown="BtnAddImage_MouseLeftButtonDown"
+                                MouseDown="Border_MouseDown_2"
                                 ToolTip="MaterialDesignFlatAccentBackgroundButton"
                                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
                                 BorderThickness="1">

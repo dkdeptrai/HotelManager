@@ -10,6 +10,9 @@
     <Compile Update="UI\AddRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\AddRoomType.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\AddService.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,6 +28,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="UI\AddRoom.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\AddRoomType.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\AddService.xaml">

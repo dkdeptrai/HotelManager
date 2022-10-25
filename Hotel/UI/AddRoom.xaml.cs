@@ -65,7 +65,7 @@ namespace Hotel.UI
                     }
                     else
                     {
-                        MessageBox.Show("Room Num existed!, Please try again!", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Room Num existed! Please try again!", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
                 catch (Exception ex)
@@ -137,7 +137,7 @@ namespace Hotel.UI
                 bitmapImage.BeginInit();
                 bitmapImage.StreamSource = new FileStream(OpenFile.FileName, FileMode.Open, FileAccess.Read);    
                 bitmapImage.EndInit();
-                BtnAddImage.Source = bitmapImage;
+                BtnAddImage.ImageSource = bitmapImage;
             }
         }
     }
