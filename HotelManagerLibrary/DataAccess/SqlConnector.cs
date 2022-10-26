@@ -29,6 +29,7 @@ namespace HotelManagerLibrary.DataAccess
                 p.Add("@RoomNum", model.RoomNum);
                 p.Add("@RoomType", model.RoomType);
                 p.Add("@Price", model.Price);
+                p.Add("@Overview", model.Overview);
                 try
                 {
                     if(!CheckExistence("Rooms", "RoomNum", model.RoomNum))
@@ -65,8 +66,34 @@ namespace HotelManagerLibrary.DataAccess
                     return false;
                 }
             }
-
         }
+
+        public RoomModel FindRoom(string RoomNum)
+        {
+            RoomModel model = null;
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@RoomNum", RoomNum);
+                if (CheckExistence("Rooms", "RoomNum", RoomNum))
+                {
+                    var reader = connection.ExecuteReader("dbo.spRooms_View", p, commandType: CommandType.StoredProcedure);
+                    while(reader.Read())
+                    {
+                        model = new RoomModel();
+                        model.RoomNum = reader["RoomNum"].ToString();
+                        model.RoomType = reader["RoomType"].ToString();
+                        model.Price = Convert.ToDecimal(reader["Price"]);
+                        model.RoomType = reader["Booked"].ToString();
+                        model.RoomType = reader["Booked"].ToString();
+                        model.Overview = reader["Overview"] as byte[];
+                    }
+                }
+            }
+            return model;
+        }
+
 
         public List<RoomModel> GetAllRooms()
         {
@@ -161,6 +188,48 @@ namespace HotelManagerLibrary.DataAccess
                     }
                 }
             connection.Close();
+            }
+            return model;
+        }
+
+        public List<RoomTypeModel> GetRoomTypes()
+        {
+            List<RoomTypeModel> RoomTypes = new List<RoomTypeModel>();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
+            {
+                var cmd = new SqlCommand("SELECT TypeName FROM RoomTypes", (SqlConnection)connection);
+                connection.Open();
+                var reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    RoomTypes.Add(new RoomTypeModel(reader.GetString(0)));
+                }
+                connection.Close();
+            }
+                return RoomTypes;
+        }
+        public RoomTypeModel CreateRoomType(RoomTypeModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hotel")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@TypeName", model.TypeName);
+                try
+                {
+                    if (!CheckExistence("RoomTypes", "TypeName", model.TypeName))
+                    {
+                        connection.Execute("dbo.spRoomTypes_Insert", p, commandType: CommandType.StoredProcedure);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
             }
             return model;
         }

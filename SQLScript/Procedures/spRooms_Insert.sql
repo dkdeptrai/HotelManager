@@ -21,12 +21,13 @@ GO
 CREATE PROCEDURE dbo.spRooms_Insert
 	@RoomNum VARCHAR(20),
 	@RoomType VARCHAR(50),
-	@Price MONEY
+	@Price MONEY,
+	@Overview IMAGE
 AS
 BEGIN
 	SET NOCOUNT ON;
-	INSERT INTO dbo.Rooms(RoomNum, RoomType, Price)
-	VALUES(@RoomNum, @RoomType, @Price)
+	INSERT INTO dbo.Rooms(RoomNum, RoomType, Price, Overview, Booked)
+	VALUES(@RoomNum, @RoomType, @Price, @Overview, 'No')
 
 END
 GO

@@ -20,6 +20,20 @@ CREATE TABLE Rooms (
 	Overview IMAGE
 )
 
+CREATE TABLE RoomTypes (
+	TypeID INT PRIMARY KEY IDENTITY,
+	TypeName VARCHAR(20) UNIQUE,
+)
+
+INSERT INTO RoomTypes VALUES('Single')
+INSERT INTO RoomTypes VALUES('Double')
+INSERT INTO RoomTypes VALUES('Triple')
+INSERT INTO RoomTypes VALUES('Premium')
+INSERT INTO RoomTypes VALUES('Deluxe')
+
+
+
+
 ALTER TABLE Rooms
 ADD CONSTRAINT Booked_df DEFAULT 'No' FOR Booked
 ALTER TABLE Rooms

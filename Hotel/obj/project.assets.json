@@ -924,19 +924,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+    "C:\\Users\\khoa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio\\HotelManager\\Hotel\\Hotel.csproj",
+      "projectUniqueName": "D:\\University\\LTTQ\\project\\HotelManager\\Hotel\\Hotel.csproj",
       "projectName": "Hotel",
-      "projectPath": "D:\\Visual Studio\\HotelManager\\Hotel\\Hotel.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio\\HotelManager\\Hotel\\obj\\",
+      "projectPath": "D:\\University\\LTTQ\\project\\HotelManager\\Hotel\\Hotel.csproj",
+      "packagesPath": "C:\\Users\\khoa\\.nuget\\packages\\",
+      "outputPath": "D:\\University\\LTTQ\\project\\HotelManager\\Hotel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -950,8 +950,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\Visual Studio\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj": {
-              "projectPath": "D:\\Visual Studio\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj"
+            "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj": {
+              "projectPath": "D:\\University\\LTTQ\\project\\HotelManager\\HotelManagerLibrary\\HotelManagerLibrary.csproj"
             }
           }
         }
@@ -1010,7 +1010,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

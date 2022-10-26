@@ -10,6 +10,9 @@
     <Compile Update="UI\AddRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\AddRoomType.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\AddService.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -17,9 +20,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UI\CheckOut.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UI\DeleteRoom.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UI\Login.xaml.cs">
@@ -30,6 +30,9 @@
     <Page Update="UI\AddRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UI\AddRoomType.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UI\AddService.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,9 +40,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\CheckOut.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UI\DeleteRoom.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Login.xaml">
